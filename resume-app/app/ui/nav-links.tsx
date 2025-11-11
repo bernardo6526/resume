@@ -7,21 +7,27 @@ import { useState, useEffect, useRef } from 'react';
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: 'Home', href: 'home' },
-  { name: 'About', href: 'about' },
-  { name: 'Experiences', href: 'experiences' },
-  { name: 'Education', href: 'education' },
-  { name: 'Projects', href: 'projects' },
-  { name: 'Skills', href: 'skills' },
+  { name: 'Home', href: '#home' },
+  { name: 'About', href: '#about' },
+  { name: 'Experiences', href: '#experiences' },
+  { name: 'Education', href: '#education' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Skills', href: '#skills' },
 ];
 
 
-export default function NavLinks() {
+export default function NavLinks({...props}) {
   const [activeSection, setActiveSection] = useState('home');
+  const [inputValue, setInputValue] = useState(false);
   const isAutoScrolling = useRef(false);
   const scrollTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const currentSection = useRef(0);
   const isNavClick = useRef(false);
+
+   const sendToParent = () => {
+    setInputValue(!inputValue);
+    props.onValueChange(!inputValue);
+  };
 
   function toggleScroll(flag: boolean){
     if (flag){
@@ -49,8 +55,6 @@ export default function NavLinks() {
     });
   }
 
-
-  // handle section color
   useEffect(() => {
     const handleScroll = async () => {
       const viewportMiddle = window.innerHeight / 2;
@@ -73,9 +77,8 @@ export default function NavLinks() {
         }
       }
 
-      console.log(closestSection!.id, activeSection);
       setActiveSection(closestSection!.id);
-      console.log("isNavClick", isNavClick);
+      sendToParent();
       
       toggleScroll(false);
       if (activeSection != closestSection!.id && !isNavClick.current) await scrollToElement(closestSection!);
@@ -89,85 +92,19 @@ export default function NavLinks() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [activeSection]);
 
-  // handle mouse wheel
-  useEffect(() => {
-    const sections = Array.from(document.querySelectorAll("section"));
-
-    const handleWheel = (e: WheelEvent) => {
-      if (isAutoScrolling.current) return; // ignore while animating
-
-      e.preventDefault(); // prevent default continuous scrolling
-      const direction = e.deltaY > 0 ? "down" : "up";
-
-      let nextIndex = currentSection.current;
-      if (direction === "down" && nextIndex < sections.length - 1) {
-        nextIndex++;
-      } else if (direction === "up" && nextIndex > 0) {
-        nextIndex--;
-      }
-
-      if (nextIndex !== currentSection.current) {
-        scrollToSection(nextIndex, sections);
-      }
-    };
-
-    const scrollToSection = (index: number, sectionsList: HTMLElement[]) => {
-      isAutoScrolling.current = true;
-      currentSection.current = index;
-
-      sectionsList[index].scrollIntoView({ behavior: "smooth" });
-      //setActiveSection(sectionsList[index].id);
-
-      clearTimeout(scrollTimeout.current || undefined);
-      scrollTimeout.current = setTimeout(() => {
-        isAutoScrolling.current = false;
-      }, 1000); // match scroll duration
-    };
-
-    // wheel event for section-by-section scrolling
-    window.addEventListener("wheel", handleWheel, { passive: false });
-
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
-  }, []);
-
-  const handleNavClick = (sectionId: string) => {
-    isNavClick.current = true;
-    const sections = Array.from(document.querySelectorAll("section"));
-    const targetIndex = sections.findIndex(
-      (section) => section.id === sectionId
-    );
-    if (targetIndex === -1) return;
-
-    if (isAutoScrolling.current) return; // ignore if animation in progress
-
-    isAutoScrolling.current = true;
-    currentSection.current = targetIndex;
-    sections[targetIndex].scrollIntoView({ behavior: "smooth" });
-    //setActiveSection(sections[targetIndex].id);
-
-    clearTimeout(scrollTimeout.current || undefined);
-    scrollTimeout.current = setTimeout(() => {
-      isAutoScrolling.current = false;
-      isNavClick.current = false;
-    }, 1000);
-  };
-
   return (
     <>
       {links.map((link) => {
         return (
           <Link
             key={link.name}
-            href={"#"}
+            href={link.href}
             className={clsx(
-              "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:text-cyan-600 md:flex-none md:justify-center md:p-2 md:px-3",
-              { 'text-cyan-600': activeSection === link.href, },
+              "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 font-bold hover:text-sky-500 md:flex-none md:justify-center md:p-2 md:px-3",
+              { 'text-sky-500': '#'+activeSection === link.href, },
             )}
-            onClick={() => { handleNavClick(link.href) }}
           >
-            <p className="hidden md:block" style={{ fontFamily: "var(--font-lastica)" }}>{link.name}</p>
+            <p className="md:block" style={{ fontFamily: "var(--font-lastica)" }}>{link.name}</p>
           </Link>
         );
       })}

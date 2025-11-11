@@ -39,10 +39,7 @@ export default function RootLayout({
           <main className="flex-1 overflow-y-auto">
             {children}
           </main>
-
-          <aside className="w-45 relative">
-              <SideNav />
-          </aside>
+          <SideNav />
         </div>
       </body>
     </html>

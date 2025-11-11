@@ -58,7 +58,7 @@ export default function Home() {
       </section>
       <section id="experiences" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
         <Image
-          src="/backgrounds/about.png"
+          src="/backgrounds/experience.png"
           alt="Background image"
           fill
           unoptimized // ⛔ disables Next.js image optimization
@@ -74,7 +74,7 @@ export default function Home() {
       </section>
       <section id="education" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
         <Image
-          src="/backgrounds/about.png"
+          src="/backgrounds/experience.png"
           alt="Background image"
           fill
           unoptimized // ⛔ disables Next.js image optimization
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
       <section id="projects" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
         <Image
-          src="/backgrounds/about.png"
+          src="/backgrounds/experience.png"
           alt="Background image"
           fill
           unoptimized // ⛔ disables Next.js image optimization
@@ -106,7 +106,7 @@ export default function Home() {
       </section>
       <section id="skills" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
         <Image
-          src="/backgrounds/about.png"
+          src="/backgrounds/experience.png"
           alt="Background image"
           fill
           unoptimized // ⛔ disables Next.js image optimization
