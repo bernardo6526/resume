@@ -6,7 +6,7 @@ export default function Home() {
   useEffect(() => {
     // Prevent Right Click
     document.addEventListener('contextmenu', event => event.preventDefault());
-    
+
     // Clean up the event listener when the component unmounts
     return () => {
       document.removeEventListener('contextmenu', event => event.preventDefault());
@@ -53,6 +53,70 @@ export default function Home() {
             style={{ fontFamily: "var(--font-lastica)" }}
             className="font-lastica text-4xl font-bold">
             About
+          </h1>
+        </div>
+      </section>
+      <section id="experiences" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
+        <Image
+          src="/backgrounds/about.png"
+          alt="Background image"
+          fill
+          unoptimized // ⛔ disables Next.js image optimization
+          style={{ objectFit: "cover" }}
+        />
+        <div className="inset-0 z-10 flex flex-col items-center justify-center text-black">
+          <h1
+            style={{ fontFamily: "var(--font-lastica)" }}
+            className="font-lastica text-4xl font-bold">
+            Experiences
+          </h1>
+        </div>
+      </section>
+      <section id="education" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
+        <Image
+          src="/backgrounds/about.png"
+          alt="Background image"
+          fill
+          unoptimized // ⛔ disables Next.js image optimization
+          style={{ objectFit: "cover" }}
+        />
+        <div className="inset-0 z-10 flex flex-col items-center justify-center text-black">
+          <h1
+            style={{ fontFamily: "var(--font-lastica)" }}
+            className="font-lastica text-4xl font-bold">
+            Education
+          </h1>
+        </div>
+      </section>
+      <section id="projects" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
+        <Image
+          src="/backgrounds/about.png"
+          alt="Background image"
+          fill
+          unoptimized // ⛔ disables Next.js image optimization
+          style={{ objectFit: "cover" }}
+        />
+        <div className="inset-0 z-10 flex flex-col items-center justify-center text-black">
+          <h1
+            style={{ fontFamily: "var(--font-lastica)" }}
+            className="font-lastica text-4xl font-bold">
+            Projects
+          </h1>
+        </div>
+      </section>
+      <section id="skills" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
+        <Image
+          src="/backgrounds/about.png"
+          alt="Background image"
+          fill
+          unoptimized // ⛔ disables Next.js image optimization
+          style={{ objectFit: "cover" }}
+        />
+        <div className="inset-0 z-10 flex flex-col items-center justify-center text-black">
+          <h1
+            style={{ fontFamily: "var(--font-lastica)" }}
+            className="font-lastica text-4xl font-bold">
+            Skills
           </h1>
         </div>
       </section>
