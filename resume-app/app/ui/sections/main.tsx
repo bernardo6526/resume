@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Background from '@/app/ui/background';
+import SlideText from "@/app/ui/slide-text";
 
 export default function Main({ background, logo }: { background: string, logo: string }) {
 
@@ -10,7 +11,7 @@ export default function Main({ background, logo }: { background: string, logo: s
         <h1
           style={{ fontFamily: "var(--font-lastica)" }}
           className="font-lastica md:text-6xl text-4xl font-bold justify-center text-center ">
-          Fullstack Engineer
+          <SlideText source={["Fullstack","Frontend","Backend","Software"]}/> Engineer
         </h1>
         <Image
           src={`${logo}`}
