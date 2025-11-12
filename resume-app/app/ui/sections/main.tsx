@@ -1,16 +1,11 @@
 import Image from "next/image";
+import Background from '@/app/ui/background';
 
 export default function Main({ background, logo }: { background: string, logo: string }) {
 
   return (
     <section id="home" className="relative min-h-screen w-full bg-blue flex items-center justify-center">
-      <Image
-        src={`/backgrounds/${background}`}
-        alt="Background image"
-        fill
-        unoptimized
-        style={{ objectFit: "cover" }}
-      />
+      <Background src={background} />
       <div className="inset-0 z-10 flex flex-col items-center justify-center text-white">
         <h1
           style={{ fontFamily: "var(--font-lastica)" }}
