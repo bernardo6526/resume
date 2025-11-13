@@ -19,9 +19,10 @@ export const about = {
 
 export const experiences = [
   {
-    title: "Backend software engineer",
-    company: "Hexagon Mining",
+    h1: "Backend software engineer",
+    h2: "Hexagon Mining",
     date: "Feb 2024 - Present",
+    location: "Belo Horizonte, Brazil",
     text: `
       • Enhanced user experience (UX) by reducing data importing errors by 80%, implementing better error handling,
       and user-friendly messages using Ruby on Rails.
@@ -39,9 +40,10 @@ export const experiences = [
     `
   },
   {
-    title: "Frontend software engineer",
-    company: "Hexagon Mining",
+    h1: "Frontend software engineer",
+    h2: "Hexagon Mining",
     date: "Feb 2024 - Present",
+    location: "Belo Horizonte, Brazil",
     text: `
       • Enhanced user experience (UX) by reducing data importing errors by 80%, implementing better error handling,
       and user-friendly messages using Ruby on Rails.
@@ -58,4 +60,50 @@ export const experiences = [
       OpenVPN.
     `
   },
+]
+
+export const education = [
+  {
+    h1: "Postgraduate Certificate in Full Stack Development",
+    h2: "Pontifical Catholic University of Minas Gerais",
+    date: "Mar 2024 - Apr 2025",
+    location: "Belo Horizonte, Brazil",
+    text: `
+      • Technologies: Node.js, JavaScript, Jest, Django, Python, Docker, React, HTML, CSS, Cypress, PostgreSQL, MongoDB, and Redis
+    `
+  },
+  {
+    h1: "FullStack Development",
+    h2: "Pontifical Catholic University of Minas Gerais",
+    date: "Jan 2017 - Dec 2022",
+    location: "Belo Horizonte, Brazil",
+    text: `
+      • Technologies: React, React Native, JavaScript, HTML, CSS, Java, C++, C, and PostgreSQL
+    `
+  },
+]
+
+export const projects = [
+  {
+    h1: "API-REST-NODE",
+    h2: "Backend Project",
+    date: "Jul 2025 - Present",
+    location: "Node.js, Express, PostgreSQL, Sequelize",
+    text: `
+      • Built a RESTful API for studying purposes
+      • Planned enhancements include containerizing the application with Docker, adding unit tests with Jest, implementing a CI/CD
+      pipeline using GitHub Actions, and documenting the API with the OpenAPI Specification
+      • GitHub repository: github.com/bernardo6526/api-rest-node.
+    `
+  },
+  {
+    h1: "Pantry Manager",
+    h2: "Frontend Project",
+    date: "Apr 2021 - Apr 2021",
+    location: "HTML, CSS, JavaScript, React",
+    text: `
+      • SPA and PWA made for managing pantry and shopping lists
+      • GitHub repository: github.com/bernardo6526/GerenciadorDeDispensaReact
+    `
+  },  
 ]

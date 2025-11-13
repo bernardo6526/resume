@@ -1,6 +1,7 @@
 export default function Title({ text }: { text: string }) {
   return (
-    <div className="absolute pt-10 pl-[5%] z-10 text-black w-fit h-fit">
+    <div className="w-[100%]">
+      <div className="pt-10 pl-[5%] z-10 text-black w-fit h-fit">
         <h1
           style={{ fontFamily: "var(--font-lastica)" }}
           className="
@@ -16,5 +17,6 @@ export default function Title({ text }: { text: string }) {
           ></span>
         </h1>
       </div>
+    </div>
   )
 }

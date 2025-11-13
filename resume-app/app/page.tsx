@@ -5,6 +5,7 @@ import Main from '@/app/ui/sections/main';
 import About from '@/app/ui/sections/about';
 import Experiences from '@/app/ui/sections/experiences';
 import Skills from '@/app/ui/sections/skills';
+import { experiences, education, projects } from '@/app/data/objects';
 
 export default function Home() {
   useEffect(() => {
@@ -21,9 +22,9 @@ export default function Home() {
     <div className="min-h-screen w-full flex flex-col items-center justify-center">
       <Main background="home.png" logo="logo.png" />
       <About background="about.png" title="About" />
-      <Experiences background="experience.png" title="Experiences" id="experiences" />
-      <Experiences background="experience.png" title="Education" id="education" />
-      <Experiences background="experience.png" title="Projects" id="projects" />
+      <Experiences background="experience.png" title="Experiences" id="experiences" data={experiences} />
+      <Experiences background="experience.png" title="Education" id="education" data={education} />
+      <Experiences background="experience.png" title="Projects" id="projects" data={projects} />
       <Skills background="experience.png" />
     </div>
   );

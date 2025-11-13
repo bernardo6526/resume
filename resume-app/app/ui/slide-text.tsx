@@ -46,3 +46,5 @@ export default function SlideText({ source }: { source: string[] }){
     </div>
   );
 }
+
+// component source: https://codesandbox.io/p/sandbox/text-slider-zsy8p9
