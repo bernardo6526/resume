@@ -29,7 +29,10 @@ export default function Experiences({ background, title, id, data }: { backgroun
     <section id={id} className="relative min-h-screen w-full">
       <Background src={background} />
       <Title text={title} />
-      <Carousel responsive={responsive}>
+      <Carousel 
+        responsive={responsive} dotListClass="custom-dot-list-style"
+        showDots removeArrowOnDeviceType={["tablet", "mobile"]} containerClass="carousel-container"
+      >
         {data.map((element: any, index: number) => {
           return (
             <ExperienceContent

@@ -2,7 +2,7 @@ export default function ExperienceContent({ ...props }) {
   return (
     <div className="
       text-black md:text-lg text-sm flex flex-col items-center justify-center
-      min-h-screen px-[5%] pb-[30%] md:pb-[10%]"
+      h-[80vh] px-[5%] pb-[30%] md:pb-[10%]"
     >
       <div className="flex justify-between items-end md:w-[60%] w-[100%]">
         <div className="text-left">
