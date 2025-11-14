@@ -8,6 +8,7 @@ export default function Background({ src }: { src: String }) {
       fill
       unoptimized
       style={{ objectFit: "cover" }}
+      className="-z-10"
     />
   )
 }

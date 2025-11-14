@@ -10,7 +10,7 @@ export const about = {
 
   Driven by collaboration, innovation, and technical excellence — always seeking to contribute to global-scale projects that create real-world impact.
   `
-}
+};
 
 export const experiences = [
   {
@@ -41,7 +41,7 @@ export const experiences = [
       • Technologies: Ruby, Ruby on Rails, PostgreSQL, Bitbucket, Linux, VirtualBox, Objective-C, SQL Server, and OpenVPN.
     `
   },
-]
+];
 
 export const education = [
   {
@@ -58,7 +58,7 @@ export const education = [
     location: "Belo Horizonte, Brazil",
     text: `• Technologies: React, React Native, JavaScript, HTML, CSS, Java, C++, C, and PostgreSQL`
   },
-]
+];
 
 export const projects = [
   {
@@ -82,5 +82,12 @@ export const projects = [
       • GitHub repository: github.com/bernardo6526/GerenciadorDeDispensaReact
     `,
     image: "/backgrounds/about.png"
-  },  
-]
+  },
+];
+
+export const skills = [
+  { category: "Programming Languages", items: ["Python", "Ruby", "SQL", "JavaScript", "TypeScript", "Shell", "Objective-C", "Java", "C", "C++", "C#"] },
+  { category: "Databases", items: ["PostgreSQL", "MySQL", "SQLite", "SQL Server", "MongoDB", "Redis", "Neo4j"] },
+  { category: "Web", items: ["HTML", "CSS", "JavaScript", "React", "React Native", "Next.js", "Node.js", "PHP"] },
+  { category: "Other", items: ["Git", "Docker", "GitHub Actions"] },
+];
