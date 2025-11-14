@@ -45,3 +45,12 @@ body {
   background: linear-gradient(to right, #22d3ee, #1e40af); /* cyan-400 → blue-800 */
   opacity: 1;
 }
+
+.react-multiple-carousel__arrow {
+  background: linear-gradient(to right, #22d3ee, #1e40af)!important;
+  opacity: 0.6 !important;
+}
+
+.react-multiple-carousel__arrow:hover {
+  opacity: 1!important;
+}

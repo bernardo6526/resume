@@ -40,6 +40,7 @@ export default function Experiences({ background, title, id, data }: { backgroun
               h1={element.h1} h2={element.h2}
               date={element.date} location={element.location}
               text={element.text}
+              image={element.image ? element.image : ""}
             />
           );
         })}

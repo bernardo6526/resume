@@ -2,6 +2,7 @@
 import NavLinks from '@/app/ui/nav-links';
 import { useState, useEffect } from "react";
 import { IoMdMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 
 
 export default function SideNav() {
@@ -30,11 +31,11 @@ export default function SideNav() {
         className={`fixed top-0 right-0 p-4 text-3xl text-black md:hidden z-50`}
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
-        <IoMdMenu />
+        {isMobileMenuOpen? <RxCross2 /> : <IoMdMenu />}
       </button>
       <aside className={
         `fixed top-0 right-0 h-full w-35 bg-blue-800 z-20
-        md:hidden ${isMobileMenuOpen ? "" : "hidden"}`
+        md:hidden transform transition-transform duration-300 ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`
         }>
         <div className="fixed pt-10 w-35 text-xs">
           <NavLinks onValueChange={handleChildValueChange} />
