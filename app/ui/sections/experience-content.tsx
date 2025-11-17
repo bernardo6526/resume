@@ -25,7 +25,7 @@ export default function ExperienceContent({ ...props }) {
               width={0}
               height={0}
               sizes="100vw"
-              className="md:w-100 w-70"
+              className="md:w-[50%] w-[60%]"
               unoptimized
             />
           </div>
