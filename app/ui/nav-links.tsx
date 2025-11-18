@@ -101,7 +101,7 @@ export default function NavLinks({...props}) {
             href={link.href}
             className={clsx(
               "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 font-bold hover:text-sky-500 md:flex-none md:justify-center md:p-2 md:px-3",
-              { 'text-sky-500': '#'+activeSection === link.href, },
+              { 'text-sky-500': '#'+activeSection === link.href, },{ 'text-white': '#'+activeSection !== link.href, },
             )}
           >
             <p className="md:block" style={{ fontFamily: "var(--font-lastica)" }}>{link.name}</p>
